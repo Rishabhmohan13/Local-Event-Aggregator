@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
+        <title>Loca Events</title>
+
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="assets/css/perfect-scrollbar.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+
+        <!-- Gradient Color Scheme -->
+        <link rel="stylesheet" href="assets/css/colors/color.css" title="color">
+        <link rel="alternate stylesheet" href="assets/css/colors/color2.css" title="color2"> <!-- Color2 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color3.css" title="color3"> <!-- Color3 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color4.css" title="color4"> <!-- Color4 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color5.css" title="color5"> <!-- Color5 -->
+
+        <!-- Solid Color Scheme -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color6.css" title="color6"> <!-- Color6 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color7.css" title="color7"> <!-- Color7 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color8.css" title="color8"> <!-- Color8 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color9.css" title="color9"> <!-- Color9 -->
+        <link rel="alternate stylesheet" href="assets/css/colors/color10.css" title="color10"> <!-- Color10 -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+        <style>
+
+.modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 40%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+        }
+
+        .modal .modal-buttons {
+            margin-top: 20px;
+        }
+
+        .modal .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        .modal .confirm-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal .confirm-btn:hover {
+            background-color: #45a049;
+        }
+
+        .modal .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .modal .cancel-btn:hover {
+            background-color: #e74c3c;
+        }
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+            <div class="sidepanel">
+                <div class="color-picker">
+                    <h3>Gradient Colors</h3>
+                    <a class="color applied" onclick="setActiveStyleSheet('color'); return false;"></a>
+                    <a class="color2" onclick="setActiveStyleSheet('color2'); return false;"></a>
+                    <a class="color3" onclick="setActiveStyleSheet('color3'); return false;"></a>
+                    <a class="color4" onclick="setActiveStyleSheet('color4'); return false;"></a>
+                    <a class="color5" onclick="setActiveStyleSheet('color5'); return false;"></a>
+                </div><!-- Color Picker -->
+                <div class="color-picker">
+                    <h3>Solid Colors</h3>
+                    <a class="color6" onclick="setActiveStyleSheet('color6'); return false;"></a>
+                    <a class="color7" onclick="setActiveStyleSheet('color7'); return false;"></a>
+                    <a class="color8" onclick="setActiveStyleSheet('color8'); return false;"></a>
+                    <a class="color9" onclick="setActiveStyleSheet('color9'); return false;"></a>
+                    <a class="color10" onclick="setActiveStyleSheet('color10'); return false;"></a>
+                </div><!-- Color Picker -->
+            </div><!-- Side Panel -->
+            <header class="stick style1 w-100 d-flex flex-wrap justify-content-between align-items-center">
+                <div class="logo">
+                    <h1 class="mb-0"><a href="index.html" title="Home"><img class="img-fluid" src="assets/images/logo/loca.png" alt="Logo" srcset="assets/images/logo/loca.png" style="
+                        height: 130px;
+                    "></a></h1>
+                </div><!-- Logo -->
+                <div class="menu-wrap">
+                    <!-- <span class="d-block">Delhi
+                        <a class="thm-clr" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#locationModal" title="">
+                            <i class="fas fa-map-marker-alt"></i> Change location
+                        </a>
+                    </span> -->
+                    <nav class="d-inline-flex align-items-center">
+                        <div>
+                            <ul class="mb-0 list-unstyled d-inline-flex">
+                                <li class="active"><a href="index.html" title="">Home</a></li>
+                                <li class=""><a class="header-explore" href="listing-layout.html?city=Delhi" title="">Explore</a></li>
+                                <li><a href="about.html" title="">About us</a></li>
+                                <!-- <li class=""><a href="contact.html" title="">Contact us</a></li> -->
+                            </ul>
+                        </div>
+                        <a id="login-button" class="login-btn" href="login.html" title="">
+                            <i class="thm-clr fas fa-user"></i>Login or Register
+                        </a>
+                        <a id="account-button" class="login-btn" href="add-listing.html" title="">
+                            <i class="thm-clr fas fa-user"></i>Account
+                        </a>
+                    </nav>
+                </div>
+                
+                <!-- Modal for Location Selection -->
+                <!-- Menu Wrap -->
+            </header>
+            <div class="search-wrap w-100 d-flex flex-wrap align-items-center justify-content-center">
+                
+            </div><!-- Search Wrap -->
+            <div class="rspn-hdr">
+                <div class="rspn-mdbr">
+                    
+                </div>
+                <div class="lg-mn">
+                    <div class="logo"><a href="index.html" title="Home"><img src="assets/images/logo2.png" alt="Logo" srcset="assets/images/retina-logo2.png"></a></div>
+                    <span class="rspn-mnu-btn"><i class="fa fa-list-ul"></i></span>
+                </div>
+                <div class="rsnp-mnu">
+                    <span class="rspn-mnu-cls"><i class="fa fa-times"></i></span>
+                    <ul class="mb-0 list-unstyled w-100">
+                        <li class=""><a href="index.html" title="">Home</a>
+                            
+                        </li>
+                        <li class=""><a href="add-listing.html" title="">Listing</a>
+                                    
+                        </li>
+                        
+                        <li><a href="about.html" title="">About us</a></li>
+                        <li class=""><a href="contact.html" title="">Contact us</a>
+                            
+                        </li>
+                    </ul>
+                </div><!-- Responsive Menu -->
+            </div><!-- Responsive Header -->
+            <section>
+                <div class="w-100 pt-180 pb-110 black-layer opc45 position-relative">
+                    <div class="fixed-bg" style="background-image: url(assets/images/pg-tp-bg.jpg);"></div>
+                    <div class="container">
+                        <div class="pg-tp-wrp text-center w-100">
+                            <h1 class="mb-0">Account Details</h1>
+                            <!-- <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html" title="Home">Home</a></li>
+                                <li class="breadcrumb-item active">Add listing</li>
+                            </ol> -->
+                        </div><!-- Page Top Wrap -->
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="w-100 pt-120 pb-120 gray-bg position-relative">
+                    <div class="container">
+                        <div class="add-listing-wrap w-100">
+                            <div class="add-listing-top w-100">
+                                <div class="add-listing-top-info d-flex flex-wrap justify-content-between w-100">
+                                    <div class="add-listing-top-info-btns">
+                                        <!-- <a href="javascript:void(0);" title=""><i class="thm-clr fas fa-pencil-ruler"></i>Add Listing</a><br> -->
+                                        <!-- <a  href="login.html" title=""><i class="thm-clr fas fa-sign-out-alt"></i>Logout</a>
+                                        <button id="logout-button" class="thm-clr fas fa-sign-out-alt" type="submit">Logout</button> -->
+
+                                        <button id="logout-button" class="btn btn-danger">
+                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                          </button>
+
+                                    </div>
+                                    <div class="add-listing-top-info-user text-center">
+                                        <div class="add-listing-top-info-img position-relative">
+                                            <img class="img-fluid rounded-circle" src="assets/userPhoto.jpg" alt="Add Listing User Image">
+                                        </div>
+                                        <h3 id='user-name' class="mb-0">Shivkant Pandey</h3>
+                                        <p id='user-email' class="mb-0">abc@gmail.com</p>
+                                    </div>
+                                    <!-- <div class="add-listing-top-info-stats">
+                                        <ul class="add-listing-top-info-stats-list d-inline-flex mb-0 list-unstyled">
+                                            <li><span><i class="fas fa-map-marked-alt"></i>Active Listing<span class="d-block">21</span></span></li>
+                                            <li><span><i class="fas fa-chart-line"></i>Active View<span class="d-block">21</span></span></li>
+                                            <li><span><i class="far fa-eye"></i>Total Reviews<span class="d-block">21</span></span></li>
+                                            <li><span><i class="far fa-heart"></i>Times Bookmarket<span class="d-block">21</span></span></li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                                <ul class="nav nav-tabs add-listing-nav d-flex flex-wrap justify-content-center mb-0 list-unstyled w-100">
+                                    <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#add-tab1"><i class="fas fa-chart-line"></i>Dashboard</a></li> -->
+                                    <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab2"><i class="fas fa-user-edit"></i>Edit profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab3"><i class="fas fa-key"></i>Change password</a></li> -->
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab4"><i class="fas fa-list"></i>My Listings</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab5"><i class="fas fa-list"></i>My Bookings</a></li>
+                                    <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab5"><i class="fas fa-comments"></i>Reviews</a></li> -->
+                                    <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab6"><i class="fas fa-calendar-alt"></i>Booking</a></li> -->
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab7"><i class="fas fa-file-medical"></i>Add New</a></li>
+                                    <li id="edit-tab-content" style="display: none;" class="nav-item"><a class="nav-link" data-toggle="tab" href="#add-tab8"><i class="fas fa-file-medical"></i>Edit Event</a></li>
+
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-content">
+                                <!-- <div class="tab-pane fade show active" id="add-tab1">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap dashboard-wrap w-100">
+                                            <h3 class="mb-0">Dashboard</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-6">
+                                                        <div class="row mrg20">
+                                                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                <div class="dash-widget w-100">
+                                                                    <div class="mini-title w-100">
+                                                                        <h4 class="mb-0">Congratulations John!</h4>
+                                                                        <span class="d-block">Best seller of the month</span>
+                                                                    </div>
+                                                                    <div class="sales-wrap w-100 d-flex flex-wrap">
+                                                                        <div class="sale-info">
+                                                                            <span class="d-block thm-clr">$89k</span>
+                                                                            <p class="mb-0">You have done 57.6% more sales today.</p>
+                                                                            <a class="thm-btn" href="javascript:void(0);" title="">View Sales</a>
+                                                                        </div>
+                                                                        <div class="sale-img">
+                                                                            <img class="img-fluid" src="assets/images/resources/award-img.png" alt="Award Image">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                <div class="dash-widget stats-widget text-center w-100">
+                                                                    <i class="rounded-circle fas fa-briefcase"></i>
+                                                                    <h5 class="mb-0">New Products</h5>
+                                                                    <span class="d-block">1.2k</span>
+                                                                </div>                           
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                <div class="dash-widget stats-widget text-center w-100">
+                                                                    <i class="rounded-circle far fa-user"></i>
+                                                                    <h5 class="mb-0">New Users</h5>
+                                                                    <span class="d-block">45.6k</span>
+                                                                </div>                           
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-6">
+                                                        <div class="dash-widget w-100">
+                                                            <div class="mini-title w-100">
+                                                                <h4 class="mb-0">Latest Update</h4>
+                                                                <span class="d-block">Latest Posts List</span>
+                                                            </div>
+                                                            <div class="listing-posts-wrap2 w-100">
+                                                                <div class="listing-post-box3 v2 d-flex flex-wrap w-100">
+                                                                    <div class="listing-post-img3">
+                                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img4-1.jpg" alt="List Post Image 1"></a>
+                                                                    </div>
+                                                                    <div class="list-post-info3">
+                                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                                        </ul>
+                                                                        <h3 class="mb-0"><a href="event-detail.html" title="">MWC Barcelona 2021</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="listing-post-box3 v2 d-flex flex-wrap w-100">
+                                                                    <div class="listing-post-img3">
+                                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img4-2.jpg" alt="List Post Image 2"></a>
+                                                                    </div>
+                                                                    <div class="list-post-info3">
+                                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                                        </ul>
+                                                                        <h3 class="mb-0"><a href="event-detail.html" title="">MWC Barcelona 2021</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="listing-post-box3 v2 d-flex flex-wrap w-100">
+                                                                    <div class="listing-post-img3">
+                                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img4-3.jpg" alt="List Post Image 3"></a>
+                                                                    </div>
+                                                                    <div class="list-post-info3">
+                                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                                        </ul>
+                                                                        <h3 class="mb-0"><a href="event-detail.html" title="">MWC Barcelona 2021</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>                                    
+                                </div> -->
+                                <!-- <div class="tab-pane fade" id="add-tab2">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Edit Profile</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Name</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" placeholder="Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Position</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-industry"></i>
+                                                            <input type="text" placeholder="Position">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                            <input type="text" placeholder="Address">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Phone</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-phone"></i>
+                                                            <input type="tel" placeholder="Phone">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Fax</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-fax"></i>
+                                                            <input type="tel" placeholder="Fax">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Email Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-envelope"></i>
+                                                            <input type="email" placeholder="Email Address">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>About Me</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea placeholder="About Me"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="thm-btn" type="submit"><i class="far fa-paper-plane"></i>Save Changes</button>
+                                    </form>
+                                </div> -->
+                                <!-- <div class="tab-pane fade" id="add-tab3">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Change Password</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Old Password</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-key"></i>
+                                                            <input type="password" placeholder="Old Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>New Password</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-key"></i>
+                                                            <input type="password" placeholder="New Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Confirm Password</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-key"></i>
+                                                            <input type="password" placeholder="Confirm Password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="thm-btn" type="submit"><i class="far fa-paper-plane"></i>Save Password</button>
+                                    </form>
+                                </div> -->
+
+                                
+                                
+                                <div class="tab-pane fade show active" id="add-tab4">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">My Listings</h3>
+                                            <div id='listing-tab-content' class="listing-posts-wrap2 w-100">
+
+                                                <div id="deleteModal" class="modal">
+                                                    <div class="modal-content">
+                                                        <h2>Are you sure you want to delete this event?</h2>
+                                                        <p>This action cannot be undone.</p>
+                                                        <div class="modal-buttons">
+                                                            <button class="confirm-btn event-delete-confirm" onclick="deleteEvent(event, this.id)">Confirm</button>
+                                                            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <template id='listing-template'>
+
+                                                <div class="listing-post-box3 v3 d-flex flex-wrap w-100 event-box">
+                                                    <div class="listing-post-img3">
+                                                        <img class="img-fluid w-100 event-image" src="assets/images/resources/list-post-img5-1.jpg" alt="List Post Image 1"></a>
+                                                        
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li class='event-date'><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                            <!-- <li><i class="bi bi-trash-fill"></i></li> -->
+                                                        </ul>
+                                                        <!-- <a class="event-link" href="event-detail.html" title=""></a><h3  class="mb-0 event-name">New Mexico</a></h3> -->
+
+                                                        <a class='event-link' href="#"><h3 class="mb-0 event-name">Hrllo</h3> </a>
+
+                                                        <p  class="mb-0 event-about">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                        <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="bi bi-trash-fill rounded-circle"></i><button onclick="openModal(this)" style="background-color: white;">Delete Event</button></li>
+                                                            <li><i class="bi bi-pencil rounded-circle"></i><button onclick="openEdit(event, this)" style="background-color: white;">Edit Event</button></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                </template>
+                                                <!-- <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                    <div class="listing-post-img3">
+                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img5-2-1.jpg" alt="List Post Image 2"></a>
+                                                        <span class="position-absolute rounded-pill">Featured</span>
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                            <li><i class="thm-clr fas fa-user-edit"></i>By <a href="javascript:void(0);">Lokina</a></li>
+                                                        </ul>
+                                                        <h3 class="mb-0"><a href="event-detail.html" title="">Washinton</a></h3>
+                                                        <p class="mb-0">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                        <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="fas fa-glass-cheers rounded-circle"></i>3 Events Available</li>
+                                                            <li><i class="fas fa-phone rounded-circle"></i>+61 2 8236 9200</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                    <div class="listing-post-img3">
+                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img5-3.jpg" alt="List Post Image 3"></a>
+                                                        <span class="position-absolute rounded-pill">Featured</span>
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                            <li><i class="thm-clr fas fa-user-edit"></i>By <a href="javascript:void(0);">Lokina</a></li>
+                                                        </ul>
+                                                        <h3 class="mb-0"><a href="event-detail.html" title="">Colorado</a></h3>
+                                                        <p class="mb-0">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                        <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="fas fa-glass-cheers rounded-circle"></i>0 Events Available</li>
+                                                            <li><i class="fas fa-phone rounded-circle"></i>+61 2 8236 9200</li>
+                                                        </ul>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="add-tab5">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">My Bookings</h3>
+                                            <div id='order-tab-content' class="listing-posts-wrap2 w-100">
+
+                                                <template id='order-template'>
+                                                    <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                        <div class="listing-post-img3">
+                                                            <img class="img-fluid w-100 event-image" src="assets/images/resources/list-post-img5-1.jpg" alt="List Post Image 1"></a>
+                                                            <!-- <span class="position-absolute rounded-pill">Featured</span> -->
+                                                        </div>
+                                                        <div class="list-post-info3">
+                                                            <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                                <li class='event-date'><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                                <!-- <li><i class="thm-clr fas fa-user-edit"></i>By <a href="javascript:void(0);">Lokina</a></li> -->
+                                                            </ul>
+                                                            <!-- <h3  class="mb-0 event-name"><a href="event-detail.html" title="">New Mexico</a></h3> -->
+
+                                                            <a class='event-link' href="#"><h3 class="mb-0 event-name">Hrllo</h3> </a>
+                                                            <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                                <li><i class="fas fa-money-bill rounded-circle"></i>₹<span class="order-price">450</span></li>
+                                                                <li><i class="bi bi-bag-fill"></i><span class="order-quantity">2</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    </template>
+                                                <!-- <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                    <div class="listing-post-img3">
+                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img5-1.jpg" alt="List Post Image 1"></a>
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                        </ul>
+                                                        <h3 class="mb-0"><a href="event-detail.html" title="">New Mexico</a></h3>
+                                                        <p class="mb-0">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                         <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="fas fa-glass-cheers rounded-circle"></i>3 Events Available</li>
+                                                            <li><i class="fas fa-phone rounded-circle"></i>+61 2 8236 9200</li>
+                                                        </ul> 
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                    <div class="listing-post-img3">
+                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img5-2-1.jpg" alt="List Post Image 2"></a>
+                                                        <span class="position-absolute rounded-pill">Featured</span>
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                            <li><i class="thm-clr fas fa-user-edit"></i>By <a href="javascript:void(0);">Lokina</a></li>
+                                                        </ul>
+                                                        <h3 class="mb-0"><a href="event-detail.html" title="">Washinton</a></h3>
+                                                        <p class="mb-0">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                        <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="fas fa-glass-cheers rounded-circle"></i>3 Events Available</li>
+                                                            <li><i class="fas fa-phone rounded-circle"></i>+61 2 8236 9200</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-post-box3 v3 d-flex flex-wrap w-100">
+                                                    <div class="listing-post-img3">
+                                                        <a href="event-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/list-post-img5-3.jpg" alt="List Post Image 3"></a>
+                                                        <span class="position-absolute rounded-pill">Featured</span>
+                                                    </div>
+                                                    <div class="list-post-info3">
+                                                        <ul class="post-meta2 d-inline-flex mb-0 list-unstyled">
+                                                            <li><i class="thm-clr far fa-clock"></i>May 28, 2018</li>
+                                                            <li><i class="thm-clr fas fa-user-edit"></i>By <a href="javascript:void(0);">Lokina</a></li>
+                                                        </ul>
+                                                        <h3 class="mb-0"><a href="event-detail.html" title="">Colorado</a></h3>
+                                                        <p class="mb-0">Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of Bloomsbury Luxury hotel in the heart of BloomsburyLuxury hotel in the heart of BloomsburyLuxury hotel in the heart</p>
+                                                        <ul class="post-meta d-inline-flex flex-wrap mb-0 list-unstyled">
+                                                            <li><i class="fas fa-glass-cheers rounded-circle"></i>0 Events Available</li>
+                                                            <li><i class="fas fa-phone rounded-circle"></i>+61 2 8236 9200</li>
+                                                        </ul>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- <div class="tab-pane fade" id="add-tab5">
+                                    <div class="reviewer-review-data w-100">
+                                        <div class="reviewer-review-data-inner bg-white w-100">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-lg-8">
+                                                    <ul class="reviewer-review-list list-unstyled w-100">
+                                                        <li>
+                                                            <div class="reviewer-review-box w-100">
+                                                                <img class="img-fluid" src="assets/images/resources/review-img1.jpg" alt="Review Image 1">
+                                                                <div class="reviewer-review-info">
+                                                                    <div class="reviewer-review-info-top d-flex flex-wrap justify-content-between">
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <h3 class="mb-0"><a href="javascript:void(0);" title="">Gerhard Ray</a></h3>
+                                                                            <span class="d-block">December 20, 2020</span>
+                                                                        </div>
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="far fa-star off"></i></span>
+                                                                            <span class="d-block">Time: 5:07 pm</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt abore et dolore magna aliqua. enim ad minim veniam</p>
+                                                                    <a class="d-inline-block" href="javascript:void(0);" title="">Reply</a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="reviewer-review-box w-100">
+                                                                <img class="img-fluid" src="assets/images/resources/review-img2.jpg" alt="Review Image 2">
+                                                                <div class="reviewer-review-info">
+                                                                    <div class="reviewer-review-info-top d-flex flex-wrap justify-content-between">
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <h3 class="mb-0"><a href="javascript:void(0);" title="">Kairon Powel</a></h3>
+                                                                            <span class="d-block">December 20, 2020</span>
+                                                                        </div>
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="far fa-star off"></i></span>
+                                                                            <span class="d-block">Time: 5:07 pm</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt abore et dolore magna aliqua. enim ad minim veniam</p>
+                                                                    <a class="d-inline-block" href="javascript:void(0);" title="">Reply</a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="reviewer-review-box w-100">
+                                                                <img class="img-fluid" src="assets/images/resources/review-img3.jpg" alt="Review Image 3">
+                                                                <div class="reviewer-review-info">
+                                                                    <div class="reviewer-review-info-top d-flex flex-wrap justify-content-between">
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <h3 class="mb-0"><a href="javascript:void(0);" title="">Gerhard Ray</a></h3>
+                                                                            <span class="d-block">December 20, 2020</span>
+                                                                        </div>
+                                                                        <div class="reviewer-review-info-top-inner">
+                                                                            <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="far fa-star off"></i></span>
+                                                                            <span class="d-block">Time: 5:07 pm</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt abore et dolore magna aliqua. enim ad minim veniam</p>
+                                                                    <a class="d-inline-block" href="javascript:void(0);" title="">Reply</a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 col-lg-4">
+                                                    <div class="reviewer-review-widget w-100">
+                                                        <h3 class="mb-0">Review</h3>
+                                                        <div class="top-reviews-list w-100">
+                                                            <div class="top-reviews w-100">
+                                                                <label>Very Good Review</label>
+                                                                <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i></span>
+                                                            </div>
+                                                            <div class="top-reviews w-100">
+                                                                <label>Good Review</label>
+                                                                <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="far fa-star off"></i></span>
+                                                            </div>
+                                                            <div class="top-reviews w-100">
+                                                                <label>Bad Review</label>
+                                                                <span class="reviewer-rate"><i class="fas fa-star on"></i><i class="fas fa-star on"></i><i class="far fa-star off"></i><i class="far fa-star off"></i><i class="far fa-star off"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviewer-review-widget w-100">
+                                                        <h3 class="mb-0">Review Message</h3>
+                                                        <form class="review-form w-100">
+                                                            <div class="field w-100"><input type="text" placeholder="Name"></div>
+                                                            <div class="field w-100"><input type="email" placeholder="Email"></div>
+                                                            <div class="field w-100"><textarea placeholder="Message"></textarea></div>
+                                                            <div class="field w-100"><span class="check-box"><input type="checkbox" id="review-check"><label for="review-check">Save my name, email, and website in this browser for the next time I comment.</label></span></div>
+                                                            <button class="thm-btn" type="submit">Review Send</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="add-tab6">                                    
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Booking</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>First Name</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" placeholder="First Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Last Name</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" placeholder="Last Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Start Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <input type="date" placeholder="Start Time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>End Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <input type="date" placeholder="End Time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Adults</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" placeholder="Adults">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Childrens</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" placeholder="Childrens">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                            <input type="text" placeholder="Address">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Message</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea placeholder="Message"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="thm-btn" type="submit"><i class="far fa-paper-plane"></i>Book Event</button>
+                                    </form>
+                                </div> -->
+                                <div class="tab-pane fade" id="add-tab7">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Add Listing</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Event Name</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-name' type="text" placeholder="Name of your event">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Category</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-category' type="text" placeholder="Category">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Language</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-language' type="text" placeholder="Hindi">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Keywords</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Maximum 15, should be separated by commas">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Location & Contacts</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Latitude (Drag marker on the map)</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Map Latitude">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Longitude (Drag marker on the map)</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Map Longitude">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <div class="listing-loc-map place-map" id="listing-loc-map"></div>
+                                                    </div> -->
+                                                    <div class="col-md-8 col-sm-12 col-lg-8">
+                                                        <label>Venue</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-venue' type="text" placeholder="Venue">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12 col-lg-4">
+                                                        <label>City</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-city' type="text" placeholder="City">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Address of your business">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Email Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-email' type="email" placeholder="JessieManrty@domain.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Phone</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="tel" placeholder="+7(123)987654">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Website</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="url" placeholder="themeforest.net">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Upload Media</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                                        <span class="check-box"><label for="media-check1">Place image</label></span>
+                                                        <div class="field fileContainer text-center w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <span class="d-block">Click here or drop files upload</span>
+                                                            <input type="file" id="imageInput">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-4 col-sm-6 col-lg-4">
+                                                        <span class="check-box"><input type="checkbox" id="media-check2"><label for="media-check2">Carousel</label></span>
+                                                        <div class="field fileContainer text-center w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <span class="d-block">Click here or drop files upload</span>
+                                                            <input type="file">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12 col-lg-4">
+                                                        <span class="check-box"><input type="checkbox" id="media-check3"><label for="media-check3">Video</label></span>
+                                                        <label><i class="fas fa-chart-line"></i>Youtube</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="url" placeholder="https://www.youtube.com/">
+                                                        </div>
+                                                        <label><i class="fas fa-chart-line"></i>Vimeo</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="url" placeholder="https://vimeo.com/">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Details</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>About</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea id='event-about' placeholder="About"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Description</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea id='event-desc' placeholder="Description"></textarea>
+                                                        </div>
+                                                    </div>
+                                                     <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Ticket Price</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-price' type="text" placeholder="per ticket price">
+                                                        </div>
+                                                    </div>
+                                                     <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Duration in minutes</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-minutes' type="number" placeholder="120">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Start Date</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='start-date' type="date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Start Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='start-time' type="time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>End Date</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='end-date' type="date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>End Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='end-time' type="time">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Website</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="url" placeholder="themeforest.net">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="facebook-clr"><i class="fas fa-chart-line"></i>Facebook<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.facebook.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="twitter-clr"><i class="fas fa-chart-line"></i>Twitter<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.twitter.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="google-clr"><i class="fas fa-chart-line"></i>Google Plus<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.google.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="instagram-clr"><i class="fas fa-chart-line"></i>Instagram<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.instagram.com">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Amenities (optional)</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <ul class="tags-list mb-0 list-unstyled">
+                                                    <li><span><input type="checkbox" id="anmi1-1"><label for="anmi1-1">Free Wifi</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-2"><label for="anmi1-2">Parking</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-3"><label for="anmi1-3">Fitness center</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-4"><label for="anmi1-4">Non-smoking Rooms</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-5"><label for="anmi1-5">Airport Shuttle</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-6"><label for="anmi1-6">Air Conditioning</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-7"><label for="anmi1-7">Friendly workspace</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-8"><label for="anmi1-8">Wireless Internet</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-9"><label for="anmi1-9">Free parking on premises</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-10"><label for="anmi1-10">Free parking on street</label></span></li>
+                                                </ul>
+                                            </div>
+                                        </div> -->
+                                        <button id='event-submit' class="thm-btn" type="submit"><i class="far fa-paper-plane"></i>Send Listing</button>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane fade" id="add-tab8">
+                                    <form class="add-listing-form-wrap w-100">
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Edit Listing</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Event Name</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-name' type="text" placeholder="Name of your event">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Category</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-category' type="text" placeholder="Category">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Language</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-language' type="text" placeholder="Hindi">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Keywords</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Maximum 15, should be separated by commas">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Location & Contacts</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Latitude (Drag marker on the map)</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Map Latitude">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Longitude (Drag marker on the map)</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Map Longitude">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <div class="listing-loc-map place-map" id="listing-loc-map"></div>
+                                                    </div> -->
+                                                    <div class="col-md-8 col-sm-12 col-lg-8">
+                                                        <label>Venue</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-venue' type="text" placeholder="Venue">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12 col-lg-4">
+                                                        <label>City</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-city' type="text" placeholder="City">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="text" placeholder="Address of your business">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Email Address</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='event-email' type="email" placeholder="JessieManrty@domain.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Phone</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="tel" placeholder="+7(123)987654">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Website</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="url" placeholder="themeforest.net">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Upload Media</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                                        <span class="check-box"><label for="media-check1">Place image</label></span>
+                                                        <div class="field fileContainer text-center w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <span class="d-block">Click here or drop files upload</span>
+                                                            <input type="file" id="edit-event-image">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-4 col-sm-6 col-lg-4">
+                                                        <span class="check-box"><input type="checkbox" id="media-check2"><label for="media-check2">Carousel</label></span>
+                                                        <div class="field fileContainer text-center w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <span class="d-block">Click here or drop files upload</span>
+                                                            <input type="file">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12 col-lg-4">
+                                                        <span class="check-box"><input type="checkbox" id="media-check3"><label for="media-check3">Video</label></span>
+                                                        <label><i class="fas fa-chart-line"></i>Youtube</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="url" placeholder="https://www.youtube.com/">
+                                                        </div>
+                                                        <label><i class="fas fa-chart-line"></i>Vimeo</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="url" placeholder="https://vimeo.com/">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Details</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <div class="row mrg20">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>About</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea id='edit-event-about' placeholder="About"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                        <label>Description</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <textarea id='edit-event-desc' placeholder="Description"></textarea>
+                                                        </div>
+                                                    </div>
+                                                     <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Ticket Price</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-price' type="text" placeholder="per ticket price">
+                                                        </div>
+                                                    </div>
+                                                     <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Duration in minutes</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-event-minutes' type="number" placeholder="120">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Start Date</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-start-date' type="date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Start Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-start-time' type="time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>End Date</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-end-date' type="date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>End Time</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input id='edit-end-time' type="time">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label>Website</label>
+                                                        <div class="field w-100 position-relative">
+                                                            <i class="fas fa-chart-line"></i>
+                                                            <input type="url" placeholder="themeforest.net">
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="facebook-clr"><i class="fas fa-chart-line"></i>Facebook<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.facebook.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="twitter-clr"><i class="fas fa-chart-line"></i>Twitter<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.twitter.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="google-clr"><i class="fas fa-chart-line"></i>Google Plus<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.google.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                                        <label class="instagram-clr"><i class="fas fa-chart-line"></i>Instagram<span>(optional)</span></label>
+                                                        <div class="field w-100 position-relative">
+                                                            <input type="text" placeholder="www.instagram.com">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="add-listing-inner-wrap w-100">
+                                            <h3 class="mb-0">Amenities (optional)</h3>
+                                            <div class="add-listing-inner w-100">
+                                                <ul class="tags-list mb-0 list-unstyled">
+                                                    <li><span><input type="checkbox" id="anmi1-1"><label for="anmi1-1">Free Wifi</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-2"><label for="anmi1-2">Parking</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-3"><label for="anmi1-3">Fitness center</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-4"><label for="anmi1-4">Non-smoking Rooms</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-5"><label for="anmi1-5">Airport Shuttle</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-6"><label for="anmi1-6">Air Conditioning</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-7"><label for="anmi1-7">Friendly workspace</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-8"><label for="anmi1-8">Wireless Internet</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-9"><label for="anmi1-9">Free parking on premises</label></span></li>
+                                                    <li><span><input type="checkbox" id="anmi1-10"><label for="anmi1-10">Free parking on street</label></span></li>
+                                                </ul>
+                                            </div>
+                                        </div> -->
+                                        <button id='edit-submit' class="thm-btn" type="submit"><i class="far fa-paper-plane"></i>Edit Listing</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!-- Add Listing Wrap -->
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="w-100 dark-bg2 position-relative">
+                    <div class="footer-cont-wrap w-100">
+                        <div class="container">
+                            <div class="footer-cont-inner d-flex flex-wrap align-items-center justify-content-between">
+                                <div class="footer-cont-info">
+                                    <ul class="mb-0 list-unstyled d-flex align-items-center"> <!-- Use d-flex for row alignment -->
+                                        <li class="logo me-3"> <!-- Add margin-end for spacing -->
+                                            <h1 class="mb-0">
+                                                <a href="index.html" title="Home">
+                                                    <img class="img-fluid" src="assets/images/logo.png" alt="Logo" srcset="assets/images/retina-logo.png" style="height: 130px;">
+                                                </a>
+                                            </h1>
+                                        </li>
+                                        <li class="me-3"> <!-- Add margin-end for spacing -->
+                                            <i class="rounded thm-bg fas fa-phone"></i> Free support: +01 5426 24400
+                                        </li>
+                                        <li>
+                                            <i class="rounded thm-bg fas fa-envelope"></i> Email: <a href="javascript:void(0);" title="">Example@example.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-cont-btn">
+                                    <a class="thm-btn rounded" href="about.html" title="">About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Footer Contact Wrap -->
+                    <!-- <div class="footer-data w-100">
+                        <div class="container res-row">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-lg-3">
+                                    <div class="widget w-100">
+                                        <div class="logo"><h1 class="mb-0"><a href="index.html" title="Home"><img class="img-fluid" src="assets/images/logo.png" alt="Logo" srcset="assets/images/retina-logo.png" style="
+                                            height: 130px;"> </a></h1></div>
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, conse ctetuers adipiscing eli sed diam nonum nibhieLorem ipsum dolor sit amet, conse ctetuers adipiscing eli sed diam nonum nibhie……</p>
+                                        <div class="social-links d-inline-block">
+                                            <a href="javascript:void(0);" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="javascript:void(0);" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                                            <a href="javascript:void(0);" title="Google Plus" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                                            <a href="javascript:void(0);" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-lg-5">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-lg-6">
+                                            <div class="widget w-100">
+                                                <h3>Userful Links</h3>
+                                                <ul class="mb-0 list-unstyled w-100">
+                                                    <li><a href="javascript:void(0);" title="">About</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Our Story</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Professional Team</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Services</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Testimonials</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6">
+                                            <div class="widget w-100">
+                                                <h3>Trending Category</h3>
+                                                <ul class="mb-0 list-unstyled w-100">
+                                                    <li><a href="javascript:void(0);" title="">Automobiles</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Club party Night</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Car showroom</a></li>
+                                                    <li><a href="javascript:void(0);" title="">School Event</a></li>
+                                                    <li><a href="javascript:void(0);" title="">Gym event</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-lg-4">
+                                    <div class="widget w-100">
+                                        <h3>Gallery</h3>
+                                        <ul class="gallery-list mb-0 list-unstyled d-flex flex-wrap">
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-1.jpg" alt="Gallery Image 1"></a></li>
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-2.jpg" alt="Gallery Image 2"></a></li>
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-3.jpg" alt="Gallery Image 3"></a></li>
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-4.jpg" alt="Gallery Image 4"></a></li>
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-5.jpg" alt="Gallery Image 5"></a></li>
+                                            <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100" src="assets/images/resources/gal-img1-6.jpg" alt="Gallery Image 6"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>Footer Data -->
+                </div>
+            </footer>
+            
+        </main><!-- Main Wrapper -->
+
+        <script>
+
+            // Open the modal
+            function openModal(button) {
+
+                event.preventDefault();
+
+                const eventBoxID = button.closest('.event-box').id;
+                document.getElementById('deleteModal').style.display = 'block';
+
+                // console.log(eventBoxID);
+
+                document.querySelector('.event-delete-confirm').id = eventBoxID;
+            }
+    
+            // Close the modal
+            function closeModal() {
+                document.getElementById('deleteModal').style.display = 'none';
+            }
+
+        </script>
+
+        <script src="account.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/bootstrap-select.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/counterup.min.js"></script>
+        <script src="assets/js/scroll-up-bar.min.js"></script>
+        <script src="assets/js/jquery.fancybox.min.js"></script>
+        <script src="assets/js/perfect-scrollbar.min.js"></script>
+        <script src="assets/js/styleswitcher.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYc537bQom7ajFpWE5sQaVyz1SQa9_tuY&amp;callback=initMap"></script> -->
+        <!-- <script src="assets/js/google-map-int.js"></script> -->
+        <script src="assets/js/custom-scripts.js"></script>
+    </body>	
+
+</html>
