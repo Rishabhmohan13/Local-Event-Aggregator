@@ -6,4 +6,6 @@ tion, allowing users to easily search, book tickets, and manage event listings. 
 
  ## Demo Video
 
-<video controls src="Demo/Local Event Aggregator Demo.mp4" title="Demo"></video>
+https://github.com/user-attachments/assets/f56f7f32-2947-4c40-8ddd-6f8fe4fd554b
+
+
